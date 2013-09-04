@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www.prep.konga.com/" />
+<title>User_Login_Basic</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">User_Login_Basic</td></tr>
+</thead><tbody>
+<!--Navigate to prep environment-->
+<tr>
+	<td>setTimeout</td>
+	<td>60000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://www.prep.konga.com/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Login/Create an Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Login/Create an Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Email without password-->
+<tr>
+	<td>type</td>
+	<td>xpath=(//input[@id='email_field'])[2]</td>
+	<td>adetunji@konga.com</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@id='signin_button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>link=My Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>link=Wish List</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.message.error</td>
+	<td></td>
+</tr>
+<!--Password without email-->
+<tr>
+	<td>click</td>
+	<td>link=Login/Create an Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>xpath=(//input[@id='email_field'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>xpath=(//input[@id='login_password'])[2]</td>
+	<td>test1234</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@id='signin_button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>link=My Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>link=Wish List</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.message.error</td>
+	<td></td>
+</tr>
+<!--Invalid Email and valid password-->
+<tr>
+	<td>click</td>
+	<td>link=Login/Create an Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>xpath=(//input[@id='email_field'])[2]</td>
+	<td>adetunji</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>xpath=(//input[@id='login_password'])[2]</td>
+	<td>dajieriitg</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@id='signin_button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=div.message.error</td>
+	<td></td>
+</tr>
+<!--Valid email and invalid password-->
+<tr>
+	<td>click</td>
+	<td>link=Login/Create an Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>xpath=(//input[@id='email_field'])[2]</td>
+	<td>testkonga@gmail.com</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>xpath=(//input[@id='login_password'])[2]</td>
+	<td>tes&amp;**()*_*&amp;^£^$*%^&amp;)(</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@id='signin_button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>link=My Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>link=Wish List</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.message.error</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

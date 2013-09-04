@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://prep.konga.com/" />
+<title>DeliveryWidgetTest</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">DeliveryWidgetTest</td></tr>
+</thead><tbody>
+<tr>
+	<td>setTimeout</td>
+	<td>120000</td>
+	<td></td>
+</tr>
+<!--Delivery Widget test - delivery free and POD available-->
+<tr>
+	<td>open</td>
+	<td>/t/categories/phones?s%5Bbrand_ids%5D=886</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a.categories-phones &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a.info</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=state_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=area_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=state_id</td>
+	<td>label=Lagos</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=area_id</td>
+	<td>label=Bariga</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//ul/li [@id=&quot;delivery_decision_text&quot;]</td>
+	<td>Item can be delivered FREE</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//ul/li [@id=&quot;pod_decision_text&quot;]</td>
+	<td>Pay on Delivery Available</td>
+</tr>
+<!--Delivery Widget test - delivery NOT free and POD-->
+<tr>
+	<td>open</td>
+	<td>http://huntella.konga.com/products/10-watts-ipad-1-2-3-and-4-charger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=state_id</td>
+	<td>label=Lagos</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=area_id</td>
+	<td>label=Lekki (Phase 1)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//ul/li [@id=&quot;delivery_decision_text&quot;]</td>
+	<td>Item can be delivered</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//ul/li [@id=&quot;pod_decision_text&quot;]</td>
+	<td>Pay on Delivery Available</td>
+</tr>
+<!--Delivery Widget test - Cannot be delivered and NO POD-->
+<tr>
+	<td>open</td>
+	<td>http://huntella.konga.com/products/10-watts-ipad-1-2-3-and-4-charger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=state_id</td>
+	<td>label=Abuja</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=area_id</td>
+	<td>label=Bwari</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//ul/li [@id=&quot;delivery_decision_text&quot;]</td>
+	<td>Item cannot be delivered</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//ul/li [@id=&quot;pod_decision_text&quot;]</td>
+	<td></td>
+</tr>
+<!--Delivery Widget test - free delivery and NO POD-->
+<tr>
+	<td>open</td>
+	<td>/t/categories/phones?s%5Bbrand_ids%5D=886</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a.categories-phones &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a.info</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=state_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=area_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=state_id</td>
+	<td>label=Gombe</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=area_id</td>
+	<td>label=Gombe</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//ul/li [@id=&quot;delivery_decision_text&quot;]</td>
+	<td>Item can be delivered FREE</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//ul/li [@id=&quot;pod_decision_text&quot;]</td>
+	<td></td>
+</tr>
+<!--Delivery Widget test - free delivery and POD-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a.categories-beauty-and-personal-care &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a.info</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=state_id</td>
+	<td>label=Oyo</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=area_id</td>
+	<td>label=Ibadan North</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//ul/li [@id=&quot;delivery_decision_text&quot;]</td>
+	<td>Item can be delivered</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//ul/li [@id=&quot;pod_decision_text&quot;]</td>
+	<td>Pay on Delivery Available</td>
+</tr>
+</tbody></table>
+</body>
+</html>

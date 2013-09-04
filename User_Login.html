@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www.prep.konga.com/" />
+<title>User_Login</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">User_Login</td></tr>
+</thead><tbody>
+<!--Navigate to prep environment-->
+<tr>
+	<td>open</td>
+	<td>http://www.prep.konga.com/</td>
+	<td></td>
+</tr>
+<!--Display Login Screen-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Login/Create an Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Login/Create an Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Verify Elements present on page-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//input[@id='email_field'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>xpath=(//input[@id='select_signup'])[2]</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>xpath=(//input[@id='select_signin'])[2]</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//input[@id='login_password'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//a[contains(text(),'Forgot Password')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//input[@id='signin_button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//div[@id='customer_auth_form']/div)[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//a[contains(text(),'Close')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//div[@id='customer_auth_form']/div[2]/a)[2]</td>
+	<td></td>
+</tr>
+<!--Enter Login details-->
+<tr>
+	<td>type</td>
+	<td>xpath=(//input[@id='email_field'])[2]</td>
+	<td>adetunji@konga.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>xpath=(//input[@id='login_password'])[2]</td>
+	<td>kongaTunji1234</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@id='signin_button'])[2]</td>
+	<td></td>
+</tr>
+<!--Verify Login Successfull-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=My Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Wish List</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Login/Create an Account</td>
+	<td></td>
+</tr>
+<!--Verify Signed out message present-->
+<tr>
+	<td>click</td>
+	<td>link=Login/Create an Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>xpath=(//div[@id='flash']/div)[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'Close')])[2]</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
